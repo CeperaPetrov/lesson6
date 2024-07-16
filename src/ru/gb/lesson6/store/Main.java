@@ -11,11 +11,8 @@ public class Main {
         Store store = new Store();
 
         // Добавим несколько ноутбуков в магазин
-        store.addNotebook(new Notebook("Dell", "XPS 13", 16, 512, "Windows", "Silver", 1200, 15.6));
-        store.addNotebook(new Notebook("Apple", "MacBook Air", 8, 256, "MacOS", "Space Gray", 1000,13.3));
-        store.addNotebook(new Notebook("HP", "Pavilion", 8, 1024, "Windows", "Black", 800, 15.6));
-        store.addNotebook(new Notebook("Lenovo", "LEGION", 32, 2048, "Linux", "Black", 1100, 17.3));
-        store.addNotebook(new Notebook("Lenovo", "LEGION", 16, 1024, "Windows", "White", 1000, 15.6));
+        store.generate();
+
 
         Scanner scanner = new Scanner(System.in);
         Map<String, Object> criteria = new HashMap<>();
