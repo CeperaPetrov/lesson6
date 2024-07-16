@@ -19,17 +19,15 @@
 
 ## Пример работы программы
 
-Введите цифру, соответствующую необходимому критерию:
-1 - ОЗУ
-2 - Объем ЖД
-3 - Операционная система
-4 - Цвет
-5 - Экран
-
-2
-
-Введите минимальный объем ЖД (в ГБ): 1024
-Найденные ноутбуки:
-Notebook{brand='HP', model='Pavilion', ram=8, storage=1024, os='Windows', display=15.6, color='Black', price=800.0}
-Notebook{brand='Lenovo', model='LEGION', ram=32, storage=2048, os='Linux', display=17.3, color='Black', price=1100.0}
-Notebook{brand='Lenovo', model='LEGION', ram=16, storage=1024, os='Windows', display=15.6, color='White', price=1000.0}
+Введите цифру, соответствующую необходимому критерию:  
+1 - ОЗУ  
+2 - Объем ЖД  
+3 - Операционная система  
+4 - Цвет  
+5 - Экран  
+2  
+Введите минимальный объем ЖД (в ГБ): 1024  
+Найденные ноутбуки:  
+Notebook{brand='HP', model='Pavilion', ram=8, storage=1024, os='Windows', display=15.6, color='Black', price=800.0}  
+Notebook{brand='Lenovo', model='LEGION', ram=32, storage=2048, os='Linux', display=17.3, color='Black', price=1100.0}  
+Notebook{brand='Lenovo', model='LEGION', ram=16, storage=1024, os='Windows', display=15.6, color='White', price=1000.0}  
