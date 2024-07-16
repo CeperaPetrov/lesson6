@@ -25,7 +25,9 @@
 3 - Операционная система
 4 - Цвет
 5 - Экран
+
 2
+
 Введите минимальный объем ЖД (в ГБ): 1024
 Найденные ноутбуки:
 Notebook{brand='HP', model='Pavilion', ram=8, storage=1024, os='Windows', display=15.6, color='Black', price=800.0}
