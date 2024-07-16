@@ -11,9 +11,11 @@ public class Main {
         Store store = new Store();
 
         // Добавим несколько ноутбуков в магазин
-        store.addNotebook(new Notebook("Dell", "XPS 13", 16, 512, "Windows", "Silver", 1200));
-        store.addNotebook(new Notebook("Apple", "MacBook Air", 8, 256, "MacOS", "Space Gray", 1000));
-        store.addNotebook(new Notebook("HP", "Pavilion", 8, 1024, "Windows", "Black", 800));
+        store.addNotebook(new Notebook("Dell", "XPS 13", 16, 512, "Windows", "Silver", 1200, 15.6));
+        store.addNotebook(new Notebook("Apple", "MacBook Air", 8, 256, "MacOS", "Space Gray", 1000,13.3));
+        store.addNotebook(new Notebook("HP", "Pavilion", 8, 1024, "Windows", "Black", 800, 15.6));
+        store.addNotebook(new Notebook("Lenovo", "LEGION", 32, 2048, "Linux", "Black", 1100, 17.3));
+        store.addNotebook(new Notebook("Lenovo", "LEGION", 16, 1024, "Windows", "White", 1000, 15.6));
 
         Scanner scanner = new Scanner(System.in);
         Map<String, Object> criteria = new HashMap<>();
@@ -23,34 +25,38 @@ public class Main {
         System.out.println("2 - Объем ЖД");
         System.out.println("3 - Операционная система");
         System.out.println("4 - Цвет");
+        System.out.println("5 - Экран");
 
         int choice = scanner.nextInt();
         scanner.nextLine(); // consume newline
 
         switch (choice) {
-            case 1:
+            case 1 -> {
                 System.out.print("Введите минимальный объем ОЗУ (в ГБ): ");
                 int ram = scanner.nextInt();
                 criteria.put("ram", ram);
-                break;
-            case 2:
+            }
+            case 2 -> {
                 System.out.print("Введите минимальный объем ЖД (в ГБ): ");
                 int storage = scanner.nextInt();
                 criteria.put("storage", storage);
-                break;
-            case 3:
+            }
+            case 3 -> {
                 System.out.print("Введите операционную систему: ");
                 String os = scanner.nextLine();
                 criteria.put("os", os);
-                break;
-            case 4:
+            }
+            case 4 -> {
                 System.out.print("Введите цвет: ");
                 String color = scanner.nextLine();
                 criteria.put("color", color);
-                break;
-            default:
-                System.out.println("Неверный выбор!");
-                break;
+            }
+            case 5 -> {
+                System.out.print("Введите размер экрана: ");
+                Double display = scanner.nextDouble();
+                criteria.put("display", display);
+            }
+            default -> System.out.println("Неверный выбор!");
         }
 
         Set<Notebook> filteredNotebooks = store.filterNotebooks(criteria);

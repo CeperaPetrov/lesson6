@@ -8,8 +8,9 @@ public class Notebook {
     private String os;
     private String color;
     private double price;
+    private double displaySize;
 
-    public Notebook(String brand, String model, int ram, int storage, String os, String color, double price) {
+    public Notebook(String brand, String model, int ram, int storage, String os, String color, double price, double displaySize) {
         this.brand = brand;
         this.model = model;
         this.ram = ram;
@@ -17,6 +18,7 @@ public class Notebook {
         this.os = os;
         this.color = color;
         this.price = price;
+        this.displaySize = displaySize;
     }
 
     public String getBrand() {
@@ -47,17 +49,47 @@ public class Notebook {
         return price;
     }
 
+    public double getDisplaySize() {
+        return displaySize;
+    }
+
     @Override
     public String toString() {
-        return "Notebook{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", ram=" + ram +
-                ", storage=" + storage +
-                ", os='" + os + '\'' +
-                ", color='" + color + '\'' +
-                ", price=" + price +
-                '}';
+        StringBuilder notebook = new StringBuilder();
+        notebook.append("Notebook{");
+        notebook.append("brand='");
+        notebook.append(brand);
+        notebook.append('\'');
+
+
+        notebook.append(", model='");
+        notebook.append(model);
+        notebook.append('\'');
+
+        notebook.append(", ram=");
+        notebook.append(ram);
+
+        notebook.append(", storage=");
+        notebook.append(storage);
+
+        notebook.append(", os='");
+        notebook.append(os);
+        notebook.append('\'');
+
+        notebook.append(", display=");
+        notebook.append(displaySize);
+
+        notebook.append(", color='");
+        notebook.append(color);
+        notebook.append('\'');
+
+        notebook.append(", price=");
+        notebook.append(price);
+        notebook.append('}');
+
+        
+        
+        return notebook.toString();
     }
 }
 

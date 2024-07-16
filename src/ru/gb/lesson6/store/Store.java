@@ -2,7 +2,7 @@ package ru.gb.lesson6.store;
 import java.util.*;
 
 public class Store {
-    private Set<Notebook> notebooks = new HashSet<>();
+    private final Set<Notebook> notebooks = new HashSet<>();
 
     public void addNotebook(Notebook notebook) {
         notebooks.add(notebook);
@@ -16,18 +16,14 @@ public class Store {
             Object value = entry.getValue();
 
             filteredNotebooks.removeIf(notebook -> {
-                switch (key) {
-                    case "ram":
-                        return notebook.getRam() < (int) value;
-                    case "storage":
-                        return notebook.getStorage() < (int) value;
-                    case "os":
-                        return !notebook.getOs().equalsIgnoreCase((String) value);
-                    case "color":
-                        return !notebook.getColor().equalsIgnoreCase((String) value);
-                    default:
-                        return false;
-                }
+                return switch (key) {
+                    case "ram" -> notebook.getRam() < (int) value;
+                    case "storage" -> notebook.getStorage() < (int) value;
+                    case "display" -> notebook.getDisplaySize() < (double) value;
+                    case "os" -> !notebook.getOs().equalsIgnoreCase((String) value);
+                    case "color" -> !notebook.getColor().equalsIgnoreCase((String) value);
+                    default -> false;
+                };
             });
         }
 
